@@ -1,8 +1,6 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  assetPrefix: 'https://darshit-pithadia.github.io/',
-  basePath: '',
   images: {
     unoptimized: true,
   },
@@ -11,7 +9,8 @@ const nextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
-  }
+  },
+  distDir: 'out'
 };
 
 export default nextConfig;
