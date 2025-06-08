@@ -148,24 +148,86 @@ export default function Header() {
                 transition={{ duration: 0.3, delay: navItems.length * 0.05 }}
                 className="border-t border-gray-700 pt-4"
               >
-                <Link 
-                  href="https://linkedin.com/in/darshit-pithadia" 
-                  target="_blank"
-                  className="text-base font-medium block py-2 px-4 rounded-md transition-colors text-gray-300 hover:bg-blue-900/20 hover:text-blue-400 flex items-center gap-2"
+                <button 
+                  onClick={() => {
+                    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                    
+                    if (isMobile) {
+                      // For mobile devices, try app deep link with fallback
+                      const linkedinApp = 'linkedin://profile/darshit-pithadia';
+                      const linkedinWeb = 'https://linkedin.com/in/darshit-pithadia';
+                      
+                      // Try to open the app, with fallback to web
+                      const appTimer = setTimeout(() => {
+                        window.open(linkedinWeb, '_blank');
+                      }, 1000);
+                      
+                      // Try to open the app
+                      try {
+                        window.location.href = linkedinApp;
+                        // If app opens successfully, clear the fallback timer
+                        const checkAppOpen = () => {
+                          if (document.hidden || !document.hasFocus()) {
+                            clearTimeout(appTimer);
+                          }
+                        };
+                        setTimeout(checkAppOpen, 500);
+                      } catch (e) {
+                        // If deep link fails, clear timer and open web version
+                        clearTimeout(appTimer);
+                        window.open(linkedinWeb, '_blank');
+                      }
+                    } else {
+                      // Desktop - open web version directly
+                      window.open('https://linkedin.com/in/darshit-pithadia', '_blank');
+                    }
+                  }}
+                  className="text-base font-medium block py-2 px-4 rounded-md transition-colors text-gray-300 hover:bg-blue-900/20 hover:text-blue-400 flex items-center gap-2 w-full text-left"
                 >
                   <Linkedin size={17} />
                   LinkedIn Profile
-                </Link>
+                </button>
                 
                 {/* GitHub in mobile menu */}
-                <Link 
-                  href="https://github.com/darshit-pithadia" 
-                  target="_blank"
-                  className="text-base font-medium block py-2 px-4 rounded-md transition-colors text-gray-300 hover:bg-blue-900/20 hover:text-blue-400 flex items-center gap-2 mt-2"
+                <button 
+                  onClick={() => {
+                    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                    
+                    if (isMobile) {
+                      // For mobile devices, try app deep link with fallback
+                      const githubApp = 'github://user?username=darshit-pithadia';
+                      const githubWeb = 'https://github.com/darshit-pithadia';
+                      
+                      // Try to open the app, with fallback to web
+                      const appTimer = setTimeout(() => {
+                        window.open(githubWeb, '_blank');
+                      }, 1000);
+                      
+                      // Try to open the app
+                      try {
+                        window.location.href = githubApp;
+                        // If app opens successfully, clear the fallback timer
+                        const checkAppOpen = () => {
+                          if (document.hidden || !document.hasFocus()) {
+                            clearTimeout(appTimer);
+                          }
+                        };
+                        setTimeout(checkAppOpen, 500);
+                      } catch (e) {
+                        // If deep link fails, clear timer and open web version
+                        clearTimeout(appTimer);
+                        window.open(githubWeb, '_blank');
+                      }
+                    } else {
+                      // Desktop - open web version directly
+                      window.open('https://github.com/darshit-pithadia', '_blank');
+                    }
+                  }}
+                  className="text-base font-medium block py-2 px-4 rounded-md transition-colors text-gray-300 hover:bg-blue-900/20 hover:text-blue-400 flex items-center gap-2 mt-2 w-full text-left"
                 >
                   <Github size={17} />
                   GitHub Profile
-                </Link>
+                </button>
               </motion.div>
             </div>
           </motion.div>
