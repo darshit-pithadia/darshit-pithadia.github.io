@@ -149,7 +149,7 @@ export default function Header() {
                 className="border-t border-gray-700 pt-4"
               >
                 <Link 
-                  href="https://linkedin.com/in/darshitpithadia" 
+                  href="https://linkedin.com/in/darshit-pithadia" 
                   target="_blank"
                   className="text-base font-medium block py-2 px-4 rounded-md transition-colors text-gray-300 hover:bg-blue-900/20 hover:text-blue-400 flex items-center gap-2"
                 >
@@ -159,7 +159,7 @@ export default function Header() {
                 
                 {/* GitHub in mobile menu */}
                 <Link 
-                  href="https://github.com/darshitpithadia" 
+                  href="https://github.com/darshit-pithadia" 
                   target="_blank"
                   className="text-base font-medium block py-2 px-4 rounded-md transition-colors text-gray-300 hover:bg-blue-900/20 hover:text-blue-400 flex items-center gap-2 mt-2"
                 >
