@@ -154,7 +154,7 @@ export default function Header() {
                     
                     if (isMobile) {
                       // For mobile devices, try app deep link with fallback
-                      const linkedinApp = 'linkedin://profile/darshit-pithadia';
+                      const linkedinApp = 'linkedin://in/darshit-pithadia';
                       const linkedinWeb = 'https://linkedin.com/in/darshit-pithadia';
                       
                       // Try to open the app, with fallback to web
