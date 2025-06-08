@@ -1,10 +1,7 @@
-// next.config.mjs
-
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  assetPrefix: './',
+  assetPrefix: 'https://darshit-pithadia.github.io/',
   basePath: '',
   images: {
     unoptimized: true,
